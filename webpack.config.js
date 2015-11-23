@@ -7,7 +7,7 @@ module.exports = {
   
   output: {
     path: './public',
-    publicPath: "public/",
+    publicPath: "/",
     filename: 'bundle.js'
   },
     
@@ -22,7 +22,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!sass-loader')
       }
     ]
