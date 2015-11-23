@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "A personal \"About me\" page",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "css-loader": "^0.23.0",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "node-sass": "^3.4.2",
+    "postcss-loader": "^0.8.0",
+    "rucksack-css": "^0.8.5",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.8",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --content-base public/"
+  },
+  "author": "Dawid Czarnik",
+  "license": "MIT"
+}
