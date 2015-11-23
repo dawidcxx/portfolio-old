@@ -1,8 +1,9 @@
-html body {
-  font-size: calc(12px + 9 * ( (100vw - 420px) / 860)); }
-@media screen and (min-width: 1280px) {
-  html body {
-    font-size: 21px; } }
-@media screen and (max-width: 420px) {
-  html body {
-    font-size: 12px; } }
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  margin: 0;
+  padding: 0; }
