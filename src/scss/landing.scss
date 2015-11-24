@@ -1,17 +1,48 @@
 #landing {
+  position: relative;
+  min-height: 600px !important;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
   
   #landing-bg {
-    position: relative;
-    overflow: hidden;
-    
-    min-width: 600px;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100vw;
+    max-height: 100vh;
     
     canvas {
        display: block;
     }
     
+  }
+  
+  #landing-heading {
+    max-width: 360px;  
+    font-size: responsive 40px 60px;
+    margin-top: 60px;
+    margin: 30px auto;
+    font-family: Arial;
+    span .highlight {
+      background-color: rgba(255, 243, 255, 1);
+      font-family: 'Lobster';
+    }
+    
+    #landing-heading-bullshit { 
+      color: #00C853;
+      font-family: 'tahoma' sans-serif;
+    }
+    
+  }
+  
+  #landing-call-to-action {
+    display: block;
+    max-width: 360px;
+    width: 100%;
+    margin: 170px auto;
+    background-color: #00C853;
   }
   
 }
