@@ -12,7 +12,7 @@ Intrest people to partnership up with me.
 ### Things the site should have
 
 * use modern tooling like webpack, postcss
-* big landing page with my face on it
+* big landing page
 * showcase section
 * contact section
 * footer

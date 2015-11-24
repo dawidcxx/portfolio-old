@@ -9,5 +9,5 @@ import './scss/landing.scss';
 | section scripts
 */
 
-import './landing.js'
-
+import './landingbg.js'
+import './landingHeading';

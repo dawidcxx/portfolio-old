@@ -4,6 +4,75 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
-body {
+html, body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow-x: hidden; }
+#app-root {
+  position: relative; }
+#landing {
+  position: relative;
+  min-height: 600px !important;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden; }
+  #landing #landing-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100vw;
+    max-height: 100vh; }
+    #landing #landing-bg canvas {
+      display: block; }
+  #landing #landing-heading {
+    width: 300px;
+    z-index: 999;
+    position: absolute;
+    top: 20vh;
+    left: calc(50vw - 150px);
+    font-family: Arial;
+    color: rgba(0, 0, 0, 0.86); }
+    #landing #landing-heading #lading-heading-title {
+      font-size: calc(40px + 10 * ( (100vw - 420px) / 860));
+      line-height: .95; }
+    @media screen and (min-width: 1280px) {
+  #landing #landing-heading #lading-heading-title {
+    font-size: 50px; } }
+    @media screen and (max-width: 420px) {
+  #landing #landing-heading #lading-heading-title {
+    font-size: 40px; } }
+      #landing #landing-heading #lading-heading-title .highlight {
+        font-family: tahoma; }
+      #landing #landing-heading #lading-heading-title #landing-heading-bullshit {
+        margin: 20px 0;
+        font-family: Tahoma;
+        display: block;
+        color: #00C853;
+        font-family: 'Lobster' sans-serif;
+        font-size: calc(60px + 10 * ( (100vw - 420px) / 860));
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.87); }
+      @media screen and (min-width: 1280px) {
+  #landing #landing-heading #lading-heading-title #landing-heading-bullshit {
+    font-size: 70px; } }
+      @media screen and (max-width: 420px) {
+  #landing #landing-heading #lading-heading-title #landing-heading-bullshit {
+    font-size: 60px; } }
+        #landing #landing-heading #lading-heading-title #landing-heading-bullshit #landing-heading-bullshit-blinky {
+          margin-left: -12px; }
+    #landing #landing-heading #landing-call-to-action {
+      margin-top: 50px;
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: 5px solid #00C853;
+      color: rgba(0, 0, 0, 0.86);
+      padding: 16px 0;
+      font-size: 20px;
+      outline: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold; }
+      #landing #landing-heading #landing-call-to-action:active {
+        background-color: #00C853;
+        color: white; }

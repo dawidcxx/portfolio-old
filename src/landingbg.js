@@ -45,9 +45,28 @@ class Line {
   }
 }
 
-var nPoints = Math.floor((canvas.width + canvas.height) / 10);
+function calcNPoints() {
+  if(window.innerWidth < 400) {
+    
+    return Math.floor((canvas.width + canvas.height) / 40);
+    
+  } else if (window.innerWidth < 800) {
+    
+    return Math.floor((canvas.width + canvas.height) / 30);
+    
+  } else {
+    
+    return Math.floor((canvas.width + canvas.height) / 20);
+    
+  }
+  
+}
+
+// var nPoints = Math.floor((canvas.width + canvas.height) / 30);
+var nPoints = calcNPoints();
 var points = [];
 var lines = [];
+
 
 for(var i = 0; i < nPoints; i++) {
   
@@ -63,8 +82,8 @@ for(var i = 0; i < nPoints; i++) {
         
         lines.push(new Line(
           points[j], newPoint, {
-            lineWidth: 7 / dist,
-            color: Math.random() < 0.20 ? randCol() : 'black' // colorize ~20% of the lines
+            lineWidth: 20 / dist,
+            color: Math.random() < 0.50 ? randCol() : 'black' // colorize ~50% of the lines
           }
         ));
         

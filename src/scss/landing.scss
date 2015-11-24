@@ -20,29 +20,62 @@
   }
   
   #landing-heading {
-    max-width: 360px;  
-    font-size: responsive 40px 60px;
-    margin-top: 60px;
-    margin: 30px auto;
+    width: 300px;
+    z-index: 999;
+    position: absolute;
+    top: 20vh;
+    left: calc(50vw - 150px);
     font-family: Arial;
-    span .highlight {
-      background-color: rgba(255, 243, 255, 1);
-      font-family: 'Lobster';
+    color: rgba(0, 0, 0, 0.86);
+    
+    #lading-heading-title {
+     font-size: responsive 40px 50px;
+     line-height: .95;
+     .highlight {
+       font-family: tahoma;
+     }
+     
+     #landing-heading-bullshit {
+       margin: 20px 0;
+       font-family: Tahoma;
+       display: block;
+       color: #00C853;
+       font-family: 'Lobster' sans-serif;
+       font-size: responsive 60px 70px;
+       text-shadow: 1px 1px 1px rgba(0, 0, 0, .87);
+       
+      #landing-heading-bullshit-blinky {
+        margin-left: -12px;  
+      }
+       
+     }
+      
     }
     
-    #landing-heading-bullshit { 
-      color: #00C853;
-      font-family: 'tahoma' sans-serif;
+    #landing-call-to-action {
+      margin-top: 50px;
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: 5px solid #00C853;
+      color: rgba(0, 0, 0, .86);
+      padding: 16px 0;
+      font-size: 20px;
+      outline: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
+      
+    
+      
+      &:active {
+        background-color: #00C853;
+        color: white;
+      }
+      
     }
     
-  }
-  
-  #landing-call-to-action {
-    display: block;
-    max-width: 360px;
-    width: 100%;
-    margin: 170px auto;
-    background-color: #00C853;
+    
   }
   
 }
