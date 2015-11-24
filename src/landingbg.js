@@ -22,7 +22,10 @@ class Point {
   
   // for debugging 
   draw(ctx) {
-    ctx.fillRect(this.x, this.y, 1, 1);
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, 3, 0, 2 * Math.PI, false);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)'
+    ctx.fill();
   }
   
 }
@@ -45,28 +48,12 @@ class Line {
   }
 }
 
-function calcNPoints() {
-  if(window.innerWidth < 400) {
-    
-    return Math.floor((canvas.width + canvas.height) / 40);
-    
-  } else if (window.innerWidth < 800) {
-    
-    return Math.floor((canvas.width + canvas.height) / 30);
-    
-  } else {
-    
-    return Math.floor((canvas.width + canvas.height) / 20);
-    
-  }
-  
-}
-
-// var nPoints = Math.floor((canvas.width + canvas.height) / 30);
-var nPoints = calcNPoints();
+var nPoints = Math.floor((canvas.width + canvas.height) / 10);
 var points = [];
 var lines = [];
 
+ctx.shadowBlur = 10;
+ctx.shadowColor = '#ff6d00';
 
 for(var i = 0; i < nPoints; i++) {
   
@@ -75,17 +62,20 @@ for(var i = 0; i < nPoints; i++) {
     y: randInt(0, canvas.height)
   });
   
+  
   for (var j = 0; j < points.length; j++) {
       var dist = Math.floor(points[j].distance(newPoint))
       
-      if(dist < 150) {
+      if(dist < 128) {
         
         lines.push(new Line(
           points[j], newPoint, {
-            lineWidth: 20 / dist,
-            color: Math.random() < 0.50 ? randCol() : 'black' // colorize ~50% of the lines
+            lineWidth: 7 / dist,
+            color: Math.random() < 0.5 ? randCol() : 'black' // colorize ~50% of the lines
           }
         ));
+        ctx.shadowColor = Math.random() > 0.1 ? randCol() : 'black';    
+        lines[lines.length - 1].draw(ctx);
         
       }
       
@@ -95,4 +85,9 @@ for(var i = 0; i < nPoints; i++) {
   
 }
 
-lines.forEach(line => line.draw(ctx));
+// highlight 10 points
+for(var i = 0; i < 10; i++) {
+  
+  lines[randInt(0, lines.length - 1)].A.draw(ctx);
+  
+}
