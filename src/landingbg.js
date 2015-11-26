@@ -7,8 +7,6 @@ var ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = (window.innerHeight > 600) ? window.innerHeight : 600;
 
-container.appendChild(canvas);
-
 class Point {
   constructor({x, y}) {
     this.x = x;
@@ -24,7 +22,7 @@ class Point {
   draw(ctx) {
     ctx.beginPath();
     ctx.arc(this.x, this.y, 3, 0, 2 * Math.PI, false);
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)'
+    ctx.fillStyle = 'black'
     ctx.fill();
   }
   
@@ -48,12 +46,9 @@ class Line {
   }
 }
 
-var nPoints = Math.floor((canvas.width + canvas.height) / 10);
+var nPoints = window.innerWidth > 700 ? Math.floor((canvas.width + canvas.height) / 2) : Math.floor((canvas.width + canvas.height) / 4);
 var points = [];
 var lines = [];
-
-ctx.shadowBlur = 10;
-ctx.shadowColor = '#ff6d00';
 
 for(var i = 0; i < nPoints; i++) {
   
@@ -66,15 +61,15 @@ for(var i = 0; i < nPoints; i++) {
   for (var j = 0; j < points.length; j++) {
       var dist = Math.floor(points[j].distance(newPoint))
       
-      if(dist < 128) {
+      if(dist < 75) {
         
         lines.push(new Line(
           points[j], newPoint, {
             lineWidth: 7 / dist,
-            color: Math.random() < 0.5 ? randCol() : 'black' // colorize ~50% of the lines
+            color: Math.random() < 0.2 ? randCol() : 'white' // colorize ~20% of the lines
           }
         ));
-        ctx.shadowColor = Math.random() > 0.1 ? randCol() : 'black';    
+        
         lines[lines.length - 1].draw(ctx);
         
       }
@@ -85,9 +80,5 @@ for(var i = 0; i < nPoints; i++) {
   
 }
 
-// highlight 10 points
-for(var i = 0; i < 10; i++) {
-  
-  lines[randInt(0, lines.length - 1)].A.draw(ctx);
-  
-}
+
+container.appendChild(canvas);

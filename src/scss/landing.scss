@@ -15,7 +15,7 @@
     
     canvas {
        display: block;
-       background-color: rgba(0, 0, 0, 0.86);
+       background-color: black;
     }
     
   }
@@ -28,6 +28,7 @@
     left: calc(50vw - 150px);
     font-family: Arial;
     color: white;
+    text-shadow: 1px 1px 3px black;
     
     #lading-heading-title {
      font-size: responsive 40px 50px;
@@ -38,9 +39,9 @@
      
      #landing-heading-bullshit {
        margin: 20px 0;
-       font-family: Tahoma;
        display: block;
        color: #00C853;
+       text-shadow: 1px 1px 3px black;
        font-family: 'Lobster' sans-serif;
        font-size: responsive 60px 70px;
        
