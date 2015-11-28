@@ -51,3 +51,37 @@ export function syntaxHighlight(json) {
         return '<span class="' + cls + '">' + match + '</span>';
     });
 }
+
+
+
+/**
+ * @param  {number} stars given 
+ * @param  {number} maximum stars (defaults to 5)
+ * @return {string} formated utf8 string, eg. ★★★☆☆
+ */
+export function starify(val, max) {
+  var emptyStar = `\u2606`;
+  var filledStar = `\u2605`;
+  
+  max = max || 5;
+  
+  if(typeof val != 'number') throw new Error('#starify: first argument is requierd and must be a valid number');
+  
+  var res = '';
+  
+  for(let i = 0; i < max; i++) {
+    
+    if(i >= val) {
+      
+      res += emptyStar;  
+      
+    } else {
+      
+      res += filledStar;
+      
+    }
+    
+  }
+  
+  return res;
+}
