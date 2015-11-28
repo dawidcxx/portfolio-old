@@ -11,5 +11,6 @@ import './scss/aboutme.scss'
 */
 
 import './landingbg.js'
-import './landingHeading';
+import './landingHeading.js';
+import './landingButton.js';
 import './aboutme.js';

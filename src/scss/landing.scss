@@ -41,7 +41,7 @@
        margin: 20px 0;
        display: block;
        color: #00C853;
-       text-shadow: 1px 1px 3px black;
+       text-shadow: 1px 1px 1px white;
        font-family: 'Lobster';
        font-size: responsive 60px 70px;
        
@@ -57,9 +57,9 @@
       margin-top: 50px;
       display: block;
       width: 100%;
-      background: white;
+      background: #00C853;
       border: 5px solid #00C853;
-      color: rgba(0, 0, 0, .86);
+      color: white;
       padding: 16px 0;
       font-size: 20px;
       outline: none;
@@ -70,8 +70,8 @@
     
       
       &:active {
-        background-color: #00C853;
-        color: white;
+        background-color: #0A8E41;
+        border-color: #0A8E41;
       }
       
     }
