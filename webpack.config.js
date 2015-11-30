@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var rucksack = require('rucksack-css');
 
@@ -33,7 +34,8 @@ module.exports = {
   },
   
   plugins: [
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('style.css'),
+    new webpack.optimize.UglifyJsPlugin()
   ]
   
 };
