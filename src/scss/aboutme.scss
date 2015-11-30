@@ -16,9 +16,13 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-        
+   
     #aboutme-portrait {
       width: 400px;
+      border: 30px solid transparent;
+      border-top: 10px solid transparent;
+      border-bottom: none;
+      box-sizing: content-box;
       #aboutme-portrait-img-wrapper {
        text-align: center;
         img {
@@ -52,6 +56,10 @@
     
     #aboutme-details-view {
       width: 400px;
+      border: 30px solid transparent;
+      border-top: 10px solid transparent;
+      border-bottom: none;
+      box-sizing: content-box;
       #aboutme-details-view-json {
         width: 100%;
         background-color: black;
