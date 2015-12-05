@@ -6,6 +6,7 @@ import './scss/app.scss';
 import './scss/landing.scss';
 import './scss/aboutme.scss';
 import './scss/footer.scss';
+import './scss/work.scss';
 
 /*
 | section scripts
@@ -15,6 +16,7 @@ import './landingbg.js'
 import './landingHeading.js';
 import './landingButton.js';
 import './aboutme.js';
+import './work.js'
 
 /*
 | 'ScrollTo' scripts
