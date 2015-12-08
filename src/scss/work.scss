@@ -42,8 +42,6 @@
         
         .card-background {
           display: block;
-          filter: grayscale(100%);
-          transition: all 300ms ease-in-out;
         }
         
         .card-background.active {
