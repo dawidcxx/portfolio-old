@@ -40,11 +40,13 @@
      #landing-heading-bullshit {
        margin: 20px 0;
        display: block;
-       color: #00C853;
+       color: black;
+       padding: 16px 0;
+       padding-left: 5px;
        text-shadow: 1px 1px 3px black;
-       font-family: 'Lobster';
-       font-size: responsive 60px 70px;
-       
+       font-family: 'Droid Sans', sans-serif;
+       font-size: responsive 50px 60px;
+       background-color: white;
       #landing-heading-bullshit-blinky {
         margin-left: -12px;  
       }
