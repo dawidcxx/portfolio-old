@@ -8,12 +8,13 @@
   z-index: 1;
   margin-top: 30px;
   background-color: black;
-  height: 100px;
+  height: 200px;
   color: white;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+  align-content: center;
   font-size: 18px;
   
   ul#footer-links {
@@ -42,6 +43,7 @@
   }
   
   #footer-note {
+    margin-top: 20px;
     width: 100%;
     text-align: center;
   }

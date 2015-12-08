@@ -41,7 +41,7 @@
        margin: 20px 0;
        display: block;
        color: #00C853;
-       text-shadow: 1px 1px 1px white;
+       text-shadow: 1px 1px 3px black;
        font-family: 'Lobster';
        font-size: responsive 60px 70px;
        
@@ -66,7 +66,7 @@
       cursor: pointer;
       text-transform: uppercase;
       font-weight: bold;
-      border-radius: 7px;
+      // border-radius: 7px;
       
       &:active {
         background-color: #0A8E41;
