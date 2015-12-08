@@ -34,7 +34,7 @@ function blinkCursor(diff) {
 }
 
 
-blinkCursor();
+RAF(blinkCursor);
  
  const popLetter = () => content.innerHTML = content.innerHTML.slice(0, -1);
  const pushLetter = (ch) => content.innerHTML += ch;
