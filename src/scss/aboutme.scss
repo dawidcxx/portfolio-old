@@ -24,6 +24,11 @@
       border-top: 10px solid transparent;
       border-bottom: none;
       box-sizing: content-box;
+      
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      
       #aboutme-portrait-img-wrapper {
        text-align: center;
         img {
