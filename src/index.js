@@ -45,9 +45,60 @@ var scrollContactsEls = document.querySelectorAll('[role="scroll-to-contacts"]')
 
 [].forEach.call(scrollToAboutEls, (el) => {
   el.addEventListener('click', (e) => {
-    var target= document.getElementById('landing').getClientRects()[0].height;
+    var target = document.getElementById('landing').getClientRects()[0].height;
     scrollToY(target, 300);
   });
 });
+
+/*-------*/
+
+
+/*
+| Scroll root listener
+| Add Parallax and other scroll triggered effects here 
+*/
+
+window.addEventListener('scroll', scrollListener);
+
+var sections = {
+  landing: document.getElementById('landing').getBoundingClientRect(),
+  aboutMe: document.getElementById('aboutme').getBoundingClientRect(),
+  work: document.getElementById('work').getBoundingClientRect()
+};
+
+// brackets for the aboutme section animation
+
+var bracketOpen = document.getElementById('aboutme-portrait-description-title-openbracket');
+var bracketClose = document.getElementById('aboutme-portrait-description-title-closebracket');
+
+// [warning]
+// magic number land
+
+var aboutMeArea = {
+  top: sections.landing.height - 100,
+  bot: sections.landing.height + sections.aboutMe.height - (window.innerWidth > 600 ? 600 : 900)
+};
+
+
+function scrollListener() {
+  
+  var pos = document.body.scrollTop;
+  
+  if(pos > aboutMeArea.top && pos < aboutMeArea.bot) {
+    
+    bracketClose.classList.add('active');
+    bracketOpen.classList.add('active');
+    
+  } else {
+    
+    bracketClose.classList.remove('active');
+    bracketOpen.classList.remove('active');
+    
+  }
+  
+ 
+}
+
+scrollListener();
 
 /*-------*/

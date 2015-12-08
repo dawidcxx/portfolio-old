@@ -41,7 +41,7 @@
       
       #aboutme-portrait-description {
         
-        h3 {
+        h3#aboutme-portrait-description-title {
           display: block;
           width: 100%;
           text-align: center;
@@ -51,6 +51,25 @@
           padding: 0;
           font-weight: bold;
           font-family: 'Droid Sans', sans-serif;
+          
+          #aboutme-portrait-description-title-closebracket, #aboutme-portrait-description-title-openbracket {
+            display: inline-block;
+            transition: transform 600ms;
+            transition-timing-function: cubic-bezier('.74,.08,.68,1.53');
+          }
+          
+          #aboutme-portrait-description-title-openbracket {
+            transform: translateX(-50px);
+          }
+          
+          #aboutme-portrait-description-title-closebracket {
+            transform: translateX(50px);
+          }
+          
+          #aboutme-portrait-description-title-openbracket.active, #aboutme-portrait-description-title-closebracket.active {
+            transform: translateX(0);
+          }
+          
         }
         p {
           padding: 0 17px;
