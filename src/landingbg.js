@@ -80,9 +80,4 @@ for(var i = 0; i < nPoints; i++) {
   
 }
 
-
-window.addEventListener('resize', () => {
-  lines.forEach(line => line.draw(ctx));
-});
-
 container.appendChild(canvas);
