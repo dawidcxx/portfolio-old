@@ -82,7 +82,8 @@ var aboutMeArea = {
 
 function scrollListener() {
   
-  var pos = document.body.scrollTop;
+  var pos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
   
   if(pos > aboutMeArea.top && pos < aboutMeArea.bot) {
     
