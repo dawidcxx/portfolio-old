@@ -1,10 +1,17 @@
 import {syntaxHighlight, starify} from './utils';
 
 
+// from: http://stackoverflow.com/questions/4060004/calculate-age-in-javascript
+function calcAge(birthday) { // birthday is a date
+    var ageDifMs = Date.now() - birthday.getTime();
+    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
 var json = JSON.stringify({
-  name: 'Dawid',
-  surname: 'Czarnik',
-  age: 20,
+  firstName: 'Dawid',
+  secondName: 'Czarnik',
+  age: calcAge(new Date('1995-07-21T00:00:00+00:00')),
   knows: {
     general: [
       'HTML5/CSS3',
