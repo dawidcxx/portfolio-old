@@ -25,20 +25,18 @@ class Point {
     ctx.fillStyle = 'black'
     ctx.fill();
   }
-  
+ 
 }
 
 class Line {
-  constructor(pointA, pointB, {color, lineWidth}) {
+  constructor(pointA, pointB, {color}) {
     this.A = pointA;
     this.B = pointB;
     this.color = color || 'black';
-    this.lineWidth = lineWidth || 1;
   }
   
   draw(ctx) {
     ctx.beginPath();
-    ctx.lineWidth = this.lineWidth;
     ctx.strokeStyle = this.color;
     ctx.moveTo(this.A.x, this.A.y);
     ctx.lineTo(this.B.x, this.B.y);
@@ -61,11 +59,12 @@ for(var i = 0; i < nPoints; i++) {
   for (var j = 0; j < points.length; j++) {
       var dist = Math.floor(points[j].distance(newPoint))
       
+      ctx.globalAlpha = 7 / dist;
+     
       if(dist < 75) {
         
         lines.push(new Line(
           points[j], newPoint, {
-            lineWidth: 7 / dist,
             color: Math.random() < 0.2 ? randCol() : 'white' // colorize ~20% of the lines
           }
         ));
