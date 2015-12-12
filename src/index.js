@@ -7,6 +7,7 @@ import './scss/landing.scss';
 import './scss/aboutme.scss';
 import './scss/footer.scss';
 import './scss/work.scss';
+import './scss/contact.scss';
 
 /*
 | section scripts
