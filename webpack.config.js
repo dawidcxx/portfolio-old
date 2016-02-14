@@ -1,10 +1,11 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var rucksack = require('rucksack-css');
+var HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
   
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   
   output: {
     path: './public',
@@ -34,6 +35,7 @@ module.exports = {
   },
   
   plugins: [
+    new HtmlPlugin({template: './src/index.html'}),
     new ExtractTextPlugin('style.css'),
     new webpack.optimize.UglifyJsPlugin()
   ]

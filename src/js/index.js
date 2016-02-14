@@ -1,13 +1,13 @@
 /*
 | import styles
 */
-import './scss/global.scss';
-import './scss/app.scss';
-import './scss/landing.scss';
-import './scss/aboutme.scss';
-import './scss/footer.scss';
-import './scss/work.scss';
-import './scss/contact.scss';
+import './../scss/global.scss';
+import './../scss/app.scss';
+import './../scss/landing.scss';
+import './../scss/aboutme.scss';
+import './../scss/footer.scss';
+import './../scss/work.scss';
+import './../scss/contact.scss';
 
 /*
 | section scripts
