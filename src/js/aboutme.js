@@ -25,8 +25,8 @@ var json = JSON.stringify({
       frontEnd: ['react + flux(redux)', 'angular 1.X', 'bootstrap'],
       backEnd: ['koa', 'express', 'laravel']
     },
-    tooling: ['webpack(SASS & babel loaders)', 'gulp', 'npm / composer'],
-    other: ['jquery', 'momentjs(js) / carbon(php)', 'socket.io']
+    tooling: ['webpack(babel loader\u2764)', 'gulp', 'npm / composer'],
+    other: ['jquery', 'bookshelf / eloquent', 'socket.io']
   }
 }, null, 2);
 
