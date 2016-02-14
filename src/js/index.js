@@ -33,6 +33,11 @@ import './work.js'
 
 import {scrollToY} from './utils';
 
+var landingEl = document.getElementById('landing');
+var aboutmeEl = document.getElementById('aboutme');
+var contactEl = document.getElementById('contact');
+var workEl = document.getElementById('work');
+
 var scrollToTopEls = document.querySelectorAll('[role="scroll-to-top"]');
 var scrollToAboutEls = document.querySelectorAll('[role="scroll-to-about"]');
 var scrollProjectsEls = document.querySelectorAll('[role="scroll-to-projects"]');
@@ -46,8 +51,27 @@ var scrollContactsEls = document.querySelectorAll('[role="scroll-to-contacts"]')
 
 [].forEach.call(scrollToAboutEls, (el) => {
   el.addEventListener('click', (e) => {
-    var target = document.getElementById('landing').getClientRects()[0].height;
+    var target = landingEl.getClientRects()[0].height;
     scrollToY(target, 300);
+  });
+});
+
+[].forEach.call(scrollProjectsEls, (el) => {
+  el.addEventListener('click', (e) => {
+    var landingSize = landingEl.getClientRects()[0].height;
+    var aboutMeSize = aboutmeEl.getClientRects()[0].height;
+    var target = landingSize + aboutMeSize;
+    scrollToY(target, 300);
+  });
+});
+
+[].forEach.call(scrollContactsEls, (el) => {
+  el.addEventListener('click', (e) => {
+    var landingSize = landingEl.getClientRects()[0].height;
+    var aboutMeSize = aboutmeEl.getClientRects()[0].height;
+    var workElSize  = workEl.getClientRects()[0].height;
+    var target = landingSize + aboutMeSize + workElSize;
+    scrollToY(target, 300);  
   });
 });
 
