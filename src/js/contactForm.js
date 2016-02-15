@@ -4,6 +4,9 @@ const keys = Object.keys  || require('object-keys');
 const MAILSERVICE_URL = 'https://mighty-taiga-50462.herokuapp.com/sendmail';
 
 var form = document.getElementById('contact-left');
+var overlay = document.getElementById('contact-left-overlay-success');
+var overlayCloseBtn = document.querySelector('#contact-left-overlay-success-button-group > button');
+
 
 var fields = { 
   fname: document.getElementById('contact-left-form-fname'),
@@ -22,8 +25,15 @@ form.addEventListener('submit', function (e) {
 
   keys(fields).forEach(f => fields[f].value = '');
 
-  HTTP.post(MAILSERVICE_URL, mail, (err, resp) => {
-    console.log(err, resp);
-  }); 
+  // HTTP.post(MAILSERVICE_URL, mail, (err, resp) => {
+    
+  // }); 
 
+  overlay.classList.add('active');
+
+});
+
+overlayCloseBtn.addEventListener('click', function (e) {
+  e.preventDefault(); 
+  overlay.classList.remove('active');
 });

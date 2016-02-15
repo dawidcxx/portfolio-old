@@ -61,6 +61,72 @@
       color: black;
       padding: 12px;
       
+      #contact-left-overlay-success {
+        overflow: hidden;
+        position: absolute;
+        font-family: 'Droid sans';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 200, 83, 0.95);
+        color: white;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 100px;
+        
+        transition: .6s all cubic-bezier(0.42, 0, 0.65, 1.57);
+        transform: translateX(-500px);
+        opacity: 0;
+
+        &.active {
+          transform: translateX(0); 
+          opacity: 1;
+        }
+
+        #contact-left-overlay-success-img {
+          width: 150px;
+          height: 150px;
+          background-image: url('/email-icon.svg');
+          background-size: 100%;
+        }
+
+        #contact-left-overlay-success-msg {
+          font-size: 1.3em;
+          width: 150px;
+          text-align: center;
+        }
+
+        #contact-left-overlay-success-button-group {
+          width: 150px;
+          margin-top: 20px;
+          text-align: right;
+
+          span {
+            font-size: 0.7em;
+          }
+
+          button {
+            margin-top: 7px;
+            background: white;
+            border: 4px solid black;
+            outline: none;
+            font-weight: bold;  
+            width: 100%;
+            padding: 12px 0;
+            
+            &:active {
+              background: rgba(0, 200, 83, 1);
+              color: white;
+              border-color: white;
+            }
+
+          }
+        }
+
+      }
        
       .form-row {
         display: flex;

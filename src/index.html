@@ -162,7 +162,7 @@
     <div id="contact">
       <h1 id="contact-header">Let's talk!</h1>
       <div id="contact-main">
-        <form id="contact-left">
+        <form id="contact-left" novalidate="novalidate">
           <div class="form-row">
             <div class="form-group">
               <label for="">first name</label>
@@ -183,6 +183,14 @@
           </div>
           <div class="form-group">
             <button type="submit">send</button>
+          </div>
+          <div id="contact-left-overlay-success">
+            <div id="contact-left-overlay-success-img"></div>
+            <div id="contact-left-overlay-success-msg">Your mail has been sent successfully!</div>
+            <div id="contact-left-overlay-success-button-group">
+              <span>forgot about something?</span>
+              <button>write one more</button>
+            </div>
           </div>
         </form>
         <div id="contact-right">
