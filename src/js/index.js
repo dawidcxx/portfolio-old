@@ -17,7 +17,8 @@ import './landingbg.js'
 import './landingHeading.js';
 import './landingButton.js';
 import './aboutme.js';
-import './work.js'
+import './work.js';
+import './contactForm';
 
 /*
 | 'ScrollTo' scripts

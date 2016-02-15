@@ -2,7 +2,6 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "A personal \"About me\" page",
-  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
@@ -23,5 +22,8 @@
     "dev": "webpack-dev-server --content-base public/"
   },
   "author": "Dawid Czarnik",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "object-keys": "^1.0.9"
+  }
 }

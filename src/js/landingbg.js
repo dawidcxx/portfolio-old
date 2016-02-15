@@ -44,7 +44,7 @@ class Line {
   }
 }
 
-var nPoints = window.innerWidth > 700 ? Math.floor((canvas.width + canvas.height) / 2) : Math.floor((canvas.width + canvas.height) / 4);
+var nPoints = Math.floor((canvas.width + canvas.height) / 6);
 var points = [];
 var lines = [];
 

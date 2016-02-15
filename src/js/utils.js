@@ -145,3 +145,26 @@ export function scrollToY(scrollTargetY, speed, easing) {
     // call it once to get started
     tick();
 }
+
+
+export const HTTP = {
+  post(url, hashmap, callback) {
+    var xhr = new XMLHttpRequest();
+    
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    
+    xhr.send(JSON.stringify(hashmap));
+    
+    xhr.onreadystatechange = function () {
+
+      if(xhr.readyState == 4 && xhr.status > 200 && xhr.status < 300) {
+        callback(null, {data: xhr.responseText, code: xhr.status});
+      } else {
+        callback({data: xhr.responseText, code: xhr.status});
+      }
+
+    };
+
+  }
+}
