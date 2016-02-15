@@ -162,24 +162,24 @@
     <div id="contact">
       <h1 id="contact-header">Let's talk!</h1>
       <div id="contact-main">
-        <form id="contact-left" novalidate="novalidate">
+        <form id="contact-left">
           <div class="form-row">
             <div class="form-group">
               <label for="">first name</label>
-              <input type="text" id="contact-left-form-fname">
+              <input type="text" id="contact-left-form-fname" required>
             </div>
             <div class="form-group">
               <label for="">second name</label>
-              <input type="text" id="contact-left-form-lname">
+              <input type="text" id="contact-left-form-lname" required>
             </div>
           </div>
           <div class="form-group">
             <label for="">email</label>
-            <input type="email" id="contact-left-form-email">
+            <input type="email" id="contact-left-form-email" required>
           </div>
           <div class="form-group">
             <label for="">message</label>
-            <textarea name="" id="contact-left-form-message" cols="30" rows="10"></textarea>
+            <textarea name="" id="contact-left-form-message" cols="30" rows="10" required></textarea>
           </div>
           <div class="form-group">
             <button type="submit">send</button>
@@ -190,6 +190,14 @@
             <div id="contact-left-overlay-success-button-group">
               <span>forgot about something?</span>
               <button>write one more</button>
+            </div>
+          </div>
+          <div id="contact-left-overlay-failure">
+            <div id="contact-left-overlay-failure-img"></div>
+            <div id="contact-left-overlay-failure-msg"> Mail could not be sent.</div>
+            <div id="contact-left-overlay-failure-button-group">
+              <span>Thats Embarrassing!</span>
+              <button>try again</button>
             </div>
           </div>
         </form>

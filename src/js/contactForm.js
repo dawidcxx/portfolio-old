@@ -4,9 +4,12 @@ const keys = Object.keys  || require('object-keys');
 const MAILSERVICE_URL = 'https://mighty-taiga-50462.herokuapp.com/sendmail';
 
 var form = document.getElementById('contact-left');
-var overlay = document.getElementById('contact-left-overlay-success');
-var overlayCloseBtn = document.querySelector('#contact-left-overlay-success-button-group > button');
+var overlaySuc = document.getElementById('contact-left-overlay-success');
+var overlaySucCloseBtn = document.querySelector('#contact-left-overlay-success-button-group > button');
+var overlayFail = document.getElementById('contact-left-overlay-failure');
+var overlayFailCloseBtn = document.querySelector('#contact-left-overlay-failure-button-group > button');
 
+var formbutton = document.querySelector('#contact-left button[type="submit"]');
 
 var fields = { 
   fname: document.getElementById('contact-left-form-fname'),
@@ -15,6 +18,9 @@ var fields = {
   message: document.getElementById('contact-left-form-message')
 };
 
+function showOverlay(overlay) {
+  overlay.classList.add('active');
+}
 
 form.addEventListener('submit', function (e) {
   
@@ -25,15 +31,35 @@ form.addEventListener('submit', function (e) {
 
   keys(fields).forEach(f => fields[f].value = '');
 
-  // HTTP.post(MAILSERVICE_URL, mail, (err, resp) => {
-    
-  // }); 
+  HTTP.post(MAILSERVICE_URL, mail, (err, resp) => {
+    if(err) {
+      showOverlay(overlayFail);
+      console.log(err);
+    } else {
+      showOverlay(overlaySuc);
+      console.log(resp);
+    }
 
-  overlay.classList.add('active');
+    formbutton.disabled = true;
+    formbutton.innerText = 'send';
+        
+  }); 
+
+  formbutton.disabled = true;
+  formbutton.innerText = 'sending..';
 
 });
 
-overlayCloseBtn.addEventListener('click', function (e) {
-  e.preventDefault(); 
-  overlay.classList.remove('active');
-});
+
+
+function closeOverlay(overlay) {
+  return function handler(e) {
+    formbutton.disabled = false;
+    formbutton.innerText = 'send';
+    e.preventDefault();
+    overlay.classList.remove('active');
+  }
+}
+
+overlaySucCloseBtn.addEventListener('click', closeOverlay(overlaySuc));
+overlayFailCloseBtn.addEventListener('click', closeOverlay(overlayFail));

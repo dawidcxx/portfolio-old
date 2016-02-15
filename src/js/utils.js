@@ -160,7 +160,7 @@ export const HTTP = {
 
       if(xhr.readyState == 4 && xhr.status > 200 && xhr.status < 300) {
         callback(null, {data: xhr.responseText, code: xhr.status});
-      } else {
+      } else if (xhr.readyState == 4 && xhr.status >= 400) {
         callback({data: xhr.responseText, code: xhr.status});
       }
 
