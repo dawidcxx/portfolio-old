@@ -166,5 +166,14 @@ export const HTTP = {
 
     };
 
+  },
+  head(url, callback) {
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, true);
+    http.onreadystatechange = function () {
+        if(this.readyState == this.DONE) {
+            callback(this.status != 404);
+        }
+    }
   }
 }

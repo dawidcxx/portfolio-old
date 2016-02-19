@@ -22,6 +22,12 @@ function showOverlay(overlay) {
   overlay.classList.add('active');
 }
 
+// the mail service is implemented as an heroku app
+// heroku tends to sleep inactive apps
+// we wake that app up with an head call.
+// using setTimeout cause don't want too much requests at once.
+setTimeout(() => HTTP.head(MAILSERVICE_URL), 1000);
+
 form.addEventListener('submit', function (e) {
   
   e.preventDefault();
