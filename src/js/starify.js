@@ -44,7 +44,7 @@ export default function starify (container, width, height, divBy, asBg) {
   var ctx = canvas.getContext('2d');
   canvas.width = width;
   canvas.height = height;
-
+  
   var nPoints = Math.floor((canvas.width + canvas.height) / divBy);
   var points = [];
   var lines = [];
@@ -79,7 +79,6 @@ export default function starify (container, width, height, divBy, asBg) {
     points.push(newPoint);
     
   }
-
 
 
   if(!asBg) {
