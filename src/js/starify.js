@@ -60,9 +60,9 @@ export default function starify (container, width, height, divBy, asBg) {
     for (var j = 0; j < points.length; j++) {
         var dist = Math.floor(points[j].distance(newPoint))
         
-        ctx.globalAlpha = 7 / dist;
+        ctx.globalAlpha = divBy / dist;
        
-        if(dist < 75) {
+        if(dist < 50) {
           
           lines.push(new Line(
             points[j], newPoint, {

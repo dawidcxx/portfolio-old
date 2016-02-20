@@ -20,7 +20,7 @@ videoEl.style.objectFit = 'fill';
 
 mountEl.appendChild(videoEl);
 
-videoEl.play();
+// videoEl.play();
 
 
-starify(mountEl, width, height, 12, false);
+starify(mountEl, width, height - 150, 6, false);
