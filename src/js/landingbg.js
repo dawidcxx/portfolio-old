@@ -1,25 +1,26 @@
+import starify from './starify';
+
 var width = window.innerWidth;
 var height = (window.innerHeight > 600) ? window.innerHeight : 600;
+var mountEl = document.getElementById('landing-bg');
 
-var landingBgEl = document.getElementById('landing-bg');
-var videoEl = document.getElementById('bg-video');
-var video = null;
+var videoEl = document.createElement('video');
+var videoSourceEl = document.createElement('source');
 
-var canvas = document.createElement('canvas');
-canvas.width = width;
-canvas.height = height;
-var ctx = canvas.getContext('2d');
+videoSourceEl.src = './background.mp4';
+videoSourceEl.type = 'video/mp4';
 
-landingBgEl.appendChild(canvas);
+videoEl.appendChild(videoSourceEl);
 
-function render() {
-  requestAnimationFrame(render);
-  ctx.drawImage(video, 0, 0, width, height);
-}
+videoEl.width = width;
+videoEl.height = height;
+videoEl.loop = true;
+videoEl.style.background = '#333';
+videoEl.style.objectFit = 'fill';
 
-videoEl.addEventListener('play', function () {
-  video = this;
-  requestAnimationFrame(render);
-});
+mountEl.appendChild(videoEl);
 
 videoEl.play();
+
+
+starify(mountEl, width, height, 12, false);
