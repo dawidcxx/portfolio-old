@@ -177,3 +177,19 @@ export const HTTP = {
     }
   }
 }
+
+// thanks: https://davidwalsh.name/javascript-once
+export const once = (fn, context) => {
+
+    var result;
+
+    return function () { 
+        if(fn) {
+            result = fn.apply(context || this, arguments);
+            fn = null;
+        }
+
+        return result;
+    };
+
+}

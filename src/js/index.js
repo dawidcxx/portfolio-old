@@ -13,7 +13,7 @@ import './../scss/contact.scss';
 | section scripts
 */
 
-import './landingbg.js'
+import landingVideo from './landingbg.js'
 import './landingHeading.js';
 import './landingButton.js';
 import './aboutme.js';
@@ -111,7 +111,12 @@ function scrollListener() {
   
   var pos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
-  
+  if(pos > aboutMeArea.top) {
+    landingVideo.pause();
+  } else {
+    landingVideo.play();
+  }
+
   if(pos > aboutMeArea.top && pos < aboutMeArea.bot) {
     
     bracketClose.classList.add('active');

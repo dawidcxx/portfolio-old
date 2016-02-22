@@ -1,5 +1,6 @@
 import starify from './starify';
 import {RAF} from './RAF';
+import {once} from './utils';
 
 var width = window.innerWidth;
 var height = (window.innerHeight > 600) ? window.innerHeight : 600;
@@ -36,10 +37,10 @@ if('objectFit' in document.body.style) {
     RAF(render);
   };
 
-  videoEl.addEventListener('play', function (_) {
+  videoEl.addEventListener('play', once(function (_) {
     video = this;
     render();
-  })
+  }));
 
   videoEl.style.display = 'none';
   document.body.appendChild(videoEl);
@@ -52,3 +53,6 @@ videoEl.play();
 
 
 starify(mountEl, width, height - 150, 6, false);
+
+
+export default videoEl;
