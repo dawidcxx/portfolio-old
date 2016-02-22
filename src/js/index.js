@@ -41,10 +41,16 @@ var aboutmeEl = document.getElementById('aboutme');
 var contactEl = document.getElementById('contact');
 var workEl = document.getElementById('work');
 
+
 var scrollToTopEls = document.querySelectorAll('[role="scroll-to-top"]');
 var scrollToAboutEls = document.querySelectorAll('[role="scroll-to-about"]');
 var scrollProjectsEls = document.querySelectorAll('[role="scroll-to-projects"]');
 var scrollContactsEls = document.querySelectorAll('[role="scroll-to-contacts"]');
+
+
+var landingSize = landingEl.getClientRects()[0].height;
+var aboutMeSize = aboutmeEl.getClientRects()[0].height;
+var workElSize  = workEl.getClientRects()[0].height;
 
 [].forEach.call(scrollToTopEls, (el) => {
   el.addEventListener('click', (e) => {
@@ -54,15 +60,13 @@ var scrollContactsEls = document.querySelectorAll('[role="scroll-to-contacts"]')
 
 [].forEach.call(scrollToAboutEls, (el) => {
   el.addEventListener('click', (e) => {
-    var target = landingEl.getClientRects()[0].height;
+    var target = landingSize;
     scrollToY(target, 300);
   });
 });
 
 [].forEach.call(scrollProjectsEls, (el) => {
   el.addEventListener('click', (e) => {
-    var landingSize = landingEl.getClientRects()[0].height;
-    var aboutMeSize = aboutmeEl.getClientRects()[0].height;
     var target = landingSize + aboutMeSize;
     scrollToY(target, 300);
   });
@@ -70,9 +74,6 @@ var scrollContactsEls = document.querySelectorAll('[role="scroll-to-contacts"]')
 
 [].forEach.call(scrollContactsEls, (el) => {
   el.addEventListener('click', (e) => {
-    var landingSize = landingEl.getClientRects()[0].height;
-    var aboutMeSize = aboutmeEl.getClientRects()[0].height;
-    var workElSize  = workEl.getClientRects()[0].height;
     var target = landingSize + aboutMeSize + workElSize;
     scrollToY(target, 300);  
   });
@@ -86,7 +87,20 @@ var scrollContactsEls = document.querySelectorAll('[role="scroll-to-contacts"]')
 | Add Parallax and other scroll triggered effects here 
 */
 
-window.addEventListener('scroll', scrollListener);
+import {debounce} from './utils';
+
+var cards = document.querySelectorAll('#work-cards .card');
+var cardsVisiable = false; // lil optimizer
+
+function showCards () {
+  let accelt = 300;
+  for (let i = 0 ; i < cards.length; i++) {
+    setTimeout(() => cards[i].classList.add('active'), i * accelt);
+    accelt *= 0.90;
+  }
+}
+
+window.addEventListener('scroll', debounce(scrollListener, 40));
 
 var sections = {
   landing: document.getElementById('landing').getBoundingClientRect(),
@@ -105,6 +119,11 @@ var bracketClose = document.getElementById('aboutme-portrait-description-title-c
 var aboutMeArea = {
   top: sections.landing.height - 100,
   bot: sections.landing.height + sections.aboutMe.height - (window.innerWidth > 600 ? 600 : 900)
+};
+
+var workArea = {
+  top: landingSize + aboutMeSize - window.innerHeight / 2,
+  bot: landingSize + aboutMeSize + workElSize
 };
 
 
@@ -130,6 +149,11 @@ function scrollListener() {
     
   }
   
+
+  if (!(cardsVisiable) && pos > workArea.top && pos < workArea.bot) {
+    showCards();
+    cardsVisiable = true;
+  }
  
 }
 

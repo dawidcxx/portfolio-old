@@ -24,8 +24,21 @@
     width: 100%;
     align-content: center;
     align-items: center;
-    
+    overflow: hidden;
+
+    .card { // active
+      opacity: 0.001;
+      transform: scale(0.9) translate(-250px, -50px);
+      transition: 250ms all ease-out;
+    }
+
+    .card.active {
+      transform: scale(1) translate(0, 0);
+      opacity: 1;
+    }
+
     .card {
+
       margin: 12px;
       padding: 12px;
       padding: 0;

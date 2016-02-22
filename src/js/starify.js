@@ -84,7 +84,6 @@ export default function starify (container, width, height, divBy, asBg) {
   if(!asBg) {
     container.appendChild(canvas);
   } else {
-    console.log('hey')
     container.style.backgroundPosition = '0 100%';
     container.style.backgroundImage = `url("${canvas.toDataURL()}")`;
   }
