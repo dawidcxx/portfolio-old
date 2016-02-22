@@ -70,7 +70,7 @@ if('objectFit' in document.body.style) {
 videoEl.play();
 
 
-starify(mountEl, width, height - 150, 6, false);
+starify(mountEl, width, height / 2, 6, false);
 
 
 export default videoEl;
