@@ -47,6 +47,7 @@ if('objectFit' in document.body.style) {
   let projectingCanvasEl = document.createElement('canvas');
   projectingCanvasEl.width = width;
   projectingCanvasEl.height = height;
+  projectingCanvasEl.style.backgroundColor = 'black';
   let ctx = projectingCanvasEl.getContext('2d');
   let video = null;
 
@@ -69,6 +70,7 @@ if('objectFit' in document.body.style) {
 
 videoEl.play();
 
+window.vid = videoEl;
 
 starify(mountEl, width, height / 2, 6, false);
 
