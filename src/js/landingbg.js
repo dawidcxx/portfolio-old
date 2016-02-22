@@ -8,8 +8,26 @@ var mountEl = document.getElementById('landing-bg');
 
 var videoEl = document.createElement('video');
 var videoSourceEl = document.createElement('source');
+var sourcify = (res) => `bg_${res}.mp4`;
+var vidSrc = '';
 
-videoSourceEl.src = './background.mp4';
+if(width < 480) {
+  vidSrc = sourcify(240);
+}
+
+else if (width >= 480 && width <= 900) {
+  vidSrc = sourcify(360);
+} 
+
+else if (width > 900 && width <= 1280) {
+  vidSrc = sourcify(480);
+} 
+
+else {
+  vidSrc = sourcify(720);
+}
+
+videoSourceEl.src = vidSrc;
 videoSourceEl.type = 'video/mp4';
 
 videoEl.appendChild(videoSourceEl);
