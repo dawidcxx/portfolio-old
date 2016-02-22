@@ -3,6 +3,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var rucksack = require('rucksack-css');
 var HtmlPlugin = require('html-webpack-plugin');
 
+var htmlMinifierConfig = {
+  removeComments: true,
+  collapseWhitespace: true
+};
+
 module.exports = {
   
   entry: './src/js/index.js',
@@ -35,7 +40,7 @@ module.exports = {
   },
   
   plugins: [
-    new HtmlPlugin({template: './src/index.html'}),
+    new HtmlPlugin({template: './src/index.html', minify: htmlMinifierConfig}),
     new ExtractTextPlugin('style.css'),
     new webpack.optimize.UglifyJsPlugin()
   ]
