@@ -13,6 +13,7 @@ import './../scss/contact.scss';
 | section scripts
 */
 
+import './errorReporter';
 import landingVideo from './landingbg.js'
 import './landingHeading.js';
 import './landingButton.js';
