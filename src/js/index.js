@@ -96,7 +96,7 @@ function showCards () {
   let accelt = 300;
   for (let i = 0 ; i < cards.length; i++) {
     setTimeout(() => cards[i].classList.add('active'), i * accelt);
-    accelt *= 0.90;
+    accelt *= .95;
   }
 }
 

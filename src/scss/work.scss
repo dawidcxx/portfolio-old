@@ -26,14 +26,15 @@
     align-items: center;
     overflow: hidden;
 
-    .card { // active
+    .card { // inactive
+      will-change: transform, opacity;
       opacity: 0.001;
-      transform: scale(0.9) translate(-250px, -50px);
+      transform: scale(0.9) translateX(-50px);
       transition: 600ms all ease-out;
     }
 
     .card.active {
-      transform: scale(1) translate(0, 0);
+      transform: scale(1) translate(0);
       opacity: 1;
     }
 
