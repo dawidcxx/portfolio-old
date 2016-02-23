@@ -18,8 +18,24 @@ var fields = {
   message: document.getElementById('contact-left-form-message')
 };
 
-function showOverlay(overlay) {
+function showOverlay (overlay) {
   overlay.classList.add('active');
+}
+
+function resetForm () {
+  keys(fields).forEach(f => fields[f].value = '');
+}
+
+function disableForm () {
+  keys(fields).forEach(f => fields[f].disabled = true);
+  formbutton.disabled = true;
+  formbutton.innerText = 'sending..';
+}
+
+function enableForm () {
+  keys(fields).forEach(f => fields[f].disabled = false);
+  formbutton.disabled = false;
+  formbutton.innerText = 'send';
 }
 
 // the mail service is implemented as an heroku app
@@ -35,24 +51,20 @@ form.addEventListener('submit', function (e) {
   
   var mail = {firstName: fields.fname.value, lastName: fields.lname.value, email: fields.email.value, message: fields.message.value};
 
-  keys(fields).forEach(f => fields[f].value = '');
+  disableForm();
 
   HTTP.post(MAILSERVICE_URL, mail, (err, resp) => {
     if(err) {
       showOverlay(overlayFail);
       console.log(err);
     } else {
+      resetForm();
       showOverlay(overlaySuc);
       console.log(resp);
     }
-
-    formbutton.disabled = true;
-    formbutton.innerText = 'send';
-        
+    enableForm();  
   }); 
 
-  formbutton.disabled = true;
-  formbutton.innerText = 'sending..';
 
 });
 
