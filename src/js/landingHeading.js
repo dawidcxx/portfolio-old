@@ -3,9 +3,9 @@ import {requestTimeout, RAF} from './RAF';
 
 // list of words to be rewrriten the last one is final
 var wordList = [
-  'developer', // okey this one just mirros the initial dom state. 
-  'designer',
-  'human\u2764'
+  'scaffolding', // okey this one just mirros the initial dom state. 
+  'design',
+  'development'
 ]
 
 var container = document.getElementById('landing-heading-bullshit');
@@ -73,7 +73,7 @@ function loop() {
     
     for(let i = 0; i < len; i++ ){ 
       
-      requestTimeout(() => pushLetter(currWord[i]), i * 100);
+      setTimeout(() => pushLetter(currWord[i]), i * 100);
       
     }
     
