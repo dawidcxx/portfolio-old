@@ -9,7 +9,7 @@
     margin: 52px 0 62px 0;
     padding: 0;
     font-size: responsive 40px 70px;  
-    font-family: 'Droid Sans' arial;
+    font-family: 'Droid Sans', sans-serif;
   }
   
   #contact-main {
@@ -17,7 +17,33 @@
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    
+
+    #contact-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 30px;
+      .social-icon {
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+
+        #contact-bottom-info {
+          position: absolute;
+          left: -50px;
+          top: 30%  ;
+          text-transform: uppercase;
+          font-family: 'Droid Sans', sans-serif;
+          transform: rotate(-90deg);
+        }
+        img {
+          width: 100px;
+          height: auto;
+        }
+      }
+
+    }
+
     #contact-right {
       max-width: 400px;
       width: 100%;

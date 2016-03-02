@@ -21,6 +21,7 @@ import './aboutme.js';
 import './work.js';
 import './contactForm';
 import './footerbg';
+import './GA.js';
 
 /*
 | 'ScrollTo' scripts

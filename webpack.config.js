@@ -41,8 +41,8 @@ module.exports = {
   
   plugins: [
     new HtmlPlugin({template: './src/index.html', minify: htmlMinifierConfig}),
-    new ExtractTextPlugin('style.css'),
-    new webpack.optimize.UglifyJsPlugin()
+    new ExtractTextPlugin('style.css')
+    // new webpack.optimize.UglifyJsPlugin()
   ]
   
 };
