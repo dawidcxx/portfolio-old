@@ -25,7 +25,7 @@ var moduleLoaders = [
   },
   {
     test: /\.html$/,
-    loader: 'html'
+    loader: 'html?interpolate'
   }
 ];
 
