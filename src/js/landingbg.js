@@ -8,7 +8,7 @@ var mountEl = document.getElementById('landing-bg');
 
 var videoEl = document.createElement('video');
 var videoSourceEl = document.createElement('source');
-var sourcify = (res) => `bg_${res}.mp4`;
+var sourcify = (res) => require(`./../media/bg_${res}.mp4`);
 var vidSrc = '';
 
 if(width < 480) {
